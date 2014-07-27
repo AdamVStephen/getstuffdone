@@ -1,0 +1,27 @@
+#!/bin/bash
+# TODO
+# Create general getstuffdone environment for common features.
+# Break the following into functions.
+#
+ENV_CHANGE_LOG=$HOME/.env.changes.log
+# Set ScreenShot Directory
+# REF http://osxdaily.com/2011/01/26/change-the-screenshot-save-file-location-in-mac-os-x/
+dir=$1
+echo "Set ScreenShot Directory."
+if [ -d "$dir" ]; then
+    echo "$dir exists already."
+else
+    mkdir -p "$dir"
+    echo "Created $dir."
+fi 
+was=`defaults read com.apple.screencapture location`
+defaults write com.apple.screencapture location "$dir"
+killall SystemUIServer
+is=`defaults read com.apple.screencapture location`
+if [ -w "$ENV_CHANGE_LOG" ]; then
+	echo "Changed com.apple.screencapture location from $was to $is" >> "$ENV_CHANGE_LOG"
+	tail -1 ~/.env.changes.log
+else
+	echo "Changed com.apple.screencapture location from $was to $is" 
+fi
+
