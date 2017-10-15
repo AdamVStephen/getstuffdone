@@ -1,0 +1,3 @@
+# WHOME is set to the CMD equivalent of %HOME% aka C:\Users\<username>
+export WHOME=/cygdrive/c/Users/$USER
+alias cdw='cd $WHOME; pwd; ls; pwd'

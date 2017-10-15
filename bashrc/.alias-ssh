@@ -1,0 +1,2 @@
+# Reminder of how to check the MD5 fingerprint of your default ssh key
+alias sshfp='echo "SSH finger print for .ssh/id_rsa.pub";  ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub'
