@@ -1,0 +1,22 @@
+*voodoo.txt*	Form vim version LAst change : 2017 November 1
+*voodoo*
+
+My personal vim notes and reminders, as a simple vim plugin using help style.
+
+Based on the article by Matt Butcher (@technosophos) at http://technosophos.com/2014/10/09/create-built-in-vim-cheatsheet.html.
+
+Note that tags are words prefixed and suffixed by asterisks.  Hence *vercingetorix* is a new tag.
+To access a tag, type :h tagname. Namespace of tags is all plugins and global help system.
+Otherwise, internal links are surrounded by pipe character.
+
+To build the tags file :helpt /path/to/voodoo (path to the top level directory)
+
+===========================================================================================
+CONTENTS
+
+	1. Configuration		................................... |voodoo-config|
+	2. Standard Editing tasks	................................... |voodoo-edit||
+	3. Different platforms		................................... |voodoo-platform|
+
+===========================================================================================
+

@@ -1,0 +1,72 @@
+# Sharpening the Saw.   Moolenar
+# Ideas
+# dd.mm.yyyy [MoSCoW] [ NY] Description. 
+#
+# 09.07.2015 [S] [ ] When vi saves .bashrc have the shell reload it automatically.
+
+export WHOME=/cygdrive/c/Users/adam
+#export HOME=/home/adam
+
+export GITBASE=$HOME/git-wd
+export AVSUTILS=$GITBASE/avs-utils
+export DOTFILES=$AVSUTILS/dot-files
+export SNIPPETS=$GITBASE/snippets
+
+source ${DOTFILES}/dot.bashrc.common
+
+source ${DOTFILES}/dot.bashrc.linux.common.pre
+
+
+### GIt repositories
+alias gosnip='cd ${SNIPPETS}'
+alias snipgo='cd ${SNIPPETS}'
+################################################################################
+# 3XS Docker Projects
+################################################################################
+
+export DOCKER_HOME=$WHOME/Docker
+export DOCKER_GITCLONE=$DOCKER_HOME/DataOnly/GitClone
+# Reference : URL = 
+alias dockergo='pushd $DOCKER_GITCLONE; pwd'
+
+
+################################################################################
+# 3XS Projects for PiWall.
+################################################################################
+
+
+export PWMEDIA=$WHOME/Videos/Piwall
+
+alias smgo='pushd /cygdrive/c/Users/adam/Projects/Broadway; pwd;'
+alias myhelp='echo "Alias smgo = Broadway"'
+alias sub="C:\Program\ Files\Sublime\ Text\ 2\sublime_text.exe"
+alias smgo=''
+export pi1=192.168.0.1
+export pi2=192.168.0.2
+export pi3=192.168.0.3
+export pi4=192.168.0.4
+export pi10=192.168.0.10
+
+alias spi1="ssh -l pi $pi1"
+alias spi2="ssh -l pi $pi2"
+alias spi3="ssh -l pi $pi3"
+alias spi4="ssh -l pi $pi4"
+alias spi10="ssh -l pi $pi10"
+export VLCHOME=/cygdrive/c/Program\ Files\ \(x86\)/VideoLAN/VLC/
+
+# Run cygwin as admin to update hosts file
+alias hosts='cat c:/windows/System32/drivers/etc/hosts'
+alias newhosts='cp /home/adam/git-wd/snippets/config/hosts c:/windows/System32/drivers/etc/hosts'
+
+# Forget ssh identities - we are changing all the time
+alias sfgt='> ~/.ssh/known_hosts'
+
+source ${DOTFILES}/dot.bashrc.linux.common.post
+export UEPICS=/cygdrive/c/UKAEA-EPICS
+# WHOME is set to the CMD equivalent of %HOME% aka C:\Users\<username>
+export WHOME=/cygdrive/c/Users/$USER
+alias gogit='cd $WHOME/git-wd/; pwd'
+alias gosrc='cd $WHOME/source/; pwd'
+alias cdw='cd $WHOME; pwd; ls; pwd'
+alias sshfp='echo "SSH finger print for .ssh/id_rsa.pub";  ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub'
+
